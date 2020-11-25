@@ -1,0 +1,131 @@
+.work__projects_container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  .work__image_container {
+    width: 33.333vw;
+    height: 33.333vw;
+    overflow: hidden;
+    .work__project_information {
+      opacity: 0;
+      transition: all 1s ease-out;
+    }
+    .work__image {
+      transition: all 1s ease-out;
+      transform: scale(1);
+    }
+    &:hover {
+      .work__project_information {
+        opacity: 0.9;
+        transition: all 1s ease-out;
+      }
+      .work__image {
+        transition: all 1s ease-out;
+        transform: scale(1.2);
+      }
+    }
+  }
+  .work__image_loader {
+    width: 33.333vw;
+    height: 33.333vw;
+    background: $black;
+    position: absolute;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .work__image {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  .work__project_information {
+    width: 33.333vw;
+    height: 33.333vw;
+    background: $dark-blue;
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: $white;
+    opacity: 0;
+    pointer-events: none;
+    .work__project_time {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin: $xxxs-size $s-size;
+      font-style: italic;
+      font-size: $font-sm;
+    }
+  }
+}
+.work__title,
+.work__tag,
+.work__completed {
+  font-size: 14px;
+  color: $white;
+}
+.work__title {
+  text-align: center;
+}
+.main__loader {
+  background: $black;
+  background-image: url("/images/background.png");
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  opacity: 1;
+  pointer-events: all;
+}
+// FOR ANIMATED FADE
+.loaded {
+  opacity: 0;
+  transition: all 1s ease-out;
+  pointer-events: none;
+}
+@media only screen and (max-width: $desktop-breakpoint) {
+  .work__projects_container {
+    .work__image_container {
+      width: 50vw;
+      height: 50vw;
+    }
+    .work__image_loader {
+      width: 50vw;
+      height: 50vw;
+    }
+    .work__project_information {
+      width: 50vw;
+      height: 50vw;
+    }
+  }
+}
+@media only screen and (max-width: $desktop-breakpoint-xs) {
+  .work__projects_container {
+    .work__image_container {
+      width: 100vw;
+      height: 100vw;
+    }
+    .work__image_loader {
+      width: 100vw;
+      height: 100vw;
+    }
+    .work__project_information {
+      width: 100vw;
+      height: 100vw;
+    }
+  }
+}

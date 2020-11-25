@@ -1,0 +1,145 @@
+// FONT IMPORTS
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Press+Start+2P&display=swap");
+
+// STYLES
+@import "./settings.scss";
+@import "./pages/home_page.scss";
+@import "./pages/work_page.scss";
+@import "./pages/project_page.scss";
+@import "./pages/contact_page.scss";
+@import "./components/navigation.scss";
+@import "./components/footer.scss";
+@import "./components/screen.scss";
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  font-family: "Lato", sans-serif;
+  font-size: $font-med;
+  overflow-x: hidden;
+  background-color: $black;
+  background-image: url("/images/background.png");
+  animation: animatedBackground 120s linear infinite;
+  background-position: 0px 0px;
+  background-repeat: repeat;
+  color: $white;
+}
+
+@keyframes animatedBackground {
+  from {
+    background-position: -100% 0;
+  }
+  to {
+    background-position: 100% 100%;
+  }
+}
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: calc(100vh - (#{$navigation-height} + #{$footer-height}));
+  height: auto;
+}
+// TYPOGRAPHY
+p {
+  color: black;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Press Start 2P", cursive;
+  margin: 20px 0;
+  padding: 0;
+  color: black;
+}
+h1 {
+  font-size: 3.25rem;
+}
+h2 {
+  font-size: 2.625rem;
+}
+h3 {
+  font-size: 2rem;
+}
+h4 {
+  font-size: 18px;
+}
+small {
+  font-size: 8px;
+  font-style: italic;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+.__input,
+.__textarea,
+.__button {
+  width: 50vw;
+  height: 40px;
+  margin: 0;
+  padding: 2px 10px;
+  border: none;
+  color: $white;
+  background: transparentize($white, 0.9);
+}
+.__textarea {
+  height: 90px;
+  resize: none;
+}
+.__button {
+  background: none;
+  color: $white;
+  font-family: "Press Start 2P", cursive;
+  font-size: 18px;
+  margin: 10px 0;
+  &:hover {
+    color: $blue;
+  }
+}
+
+.__container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 60vw;
+  background: blue;
+}
+
+.__copy_text {
+  color: black;
+}
+
+@media only screen and (max-width: $desktop-breakpoint) {
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-align: center;
+  }
+  h1 {
+    font-size: 30px;
+  }
+  h2 {
+    font-size: 26px;
+  }
+  h3 {
+    font-size: 22px;
+  }
+  h4 {
+    font-size: 18px;
+  }
+  .__input,
+  .__textarea,
+  .__button {
+    width: 80vw;
+    height: 40px;
+  }
+  .__textarea {
+    height: 90px;
+  }
+}

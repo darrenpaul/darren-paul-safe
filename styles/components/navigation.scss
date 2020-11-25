@@ -1,0 +1,173 @@
+.header__mobile,
+.is__mobile {
+  display: none;
+}
+.header__container {
+  width: 100vw;
+  height: $navigation-height;
+  margin: 0;
+  padding: 0;
+}
+.header__desktop {
+  width: 100vw;
+  height: $navigation-height;
+}
+.header__links_container {
+  height: 100%;
+  background: $black;
+}
+.header__links {
+  display: flex;
+  margin: 0 auto;
+  height: 100%;
+}
+.header__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: $white;
+  text-decoration: none;
+  transition: all 0.8s;
+  font-size: 24px;
+  font-family: "Press Start 2P", cursive;
+}
+.header__link_active {
+  font-weight: bold;
+  background: $orange;
+  color: $white;
+  transition: all 0.5s;
+}
+.mobile__menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: $orange;
+  box-shadow: 2px 2px 50px $black;
+  overflow: scroll;
+  transform: translateX(100%);
+  transition: all 0.5s ease;
+  opacity: 0;
+  z-index: 10;
+  &::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
+}
+.active-menu {
+  transform: translateX(0%);
+  opacity: 1;
+}
+
+@media only screen and (max-width: $desktop-breakpoint) {
+  .header__desktop {
+    display: none;
+  }
+  .header__container {
+    width: 100vw;
+    margin: 0;
+    display: block;
+  }
+  .header__mobile {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: $navigation-height-mobile;
+    padding: 0 $l-size;
+    background: $black;
+  }
+  .header__links {
+    display: flex;
+    width: 100%;
+    height: 80%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: $l-size 0;
+  }
+  .header__link {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    color: $white;
+  }
+  .header__link_active {
+    font-weight: bold;
+    background: none;
+    color: $black;
+    transition: all 0.5s;
+  }
+  .header__menu_toggle {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    width: $navigation-height-mobile;
+    height: $navigation-height-mobile;
+    font-size: 22px;
+    cursor: pointer;
+    h4 {
+      color: $white;
+    }
+  }
+
+  .header__mobile_menu {
+    display: flex;
+    background: $black;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 10;
+  }
+  .menu__title {
+    cursor: pointer;
+    background: none;
+    margin: $xxl-size 0 0 0;
+  }
+  .menu__links {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: auto 0;
+    width: 100%;
+  }
+  .menu__link {
+    margin: 0 0 $xl-size 0;
+    text-decoration: none;
+    color: $white;
+    font-size: 6vw;
+  }
+  .mobile_menu_close_button {
+    font-family: "Press Start 2P", cursive;
+    width: 100%;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: $white;
+    font-size: $font-xlg;
+    margin: $l-size;
+  }
+  .menu_close {
+    visibility: hidden;
+    transition: all 0.5s;
+    opacity: 0;
+  }
+  .menu_open {
+    visibility: visible;
+    transition: all 0.25s;
+    opacity: 1;
+  }
+}

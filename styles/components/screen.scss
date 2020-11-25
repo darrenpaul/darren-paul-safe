@@ -1,0 +1,83 @@
+.screen__container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: solid;
+  border-color: black;
+  border-radius: 20px;
+  background: $white;
+  width: 512px;
+  height: auto;
+  margin: 30px;
+  box-shadow: 6px 7px 0px 2px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 6px 7px 0px 2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 6px 7px 0px 2px rgba(0, 0, 0, 0.75);
+  transition: all 0.5s;
+  .screen__navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: solid;
+    border-color: black;
+    width: 100%;
+    height: 10%;
+
+    P {
+      font-family: "Press Start 2P", cursive;
+      color: black;
+      margin: 0;
+      padding: 0;
+    }
+    .screen__buttons_group {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 100px;
+      margin: 5px;
+      .screen__button {
+        width: 25px;
+        height: 25px;
+        border: solid;
+        border-radius: 50%;
+        border-color: black;
+      }
+    }
+  }
+  .screen__inner_container {
+    display: flex;
+    width: 100%;
+    height: 90%;
+    align-items: stretch;
+    justify-content: center;
+
+    .screen__content {
+      padding: 20px;
+    }
+  }
+}
+.screen__container:hover {
+  .screen__inner_container {
+    transition: all 0.5s;
+    background: lighten($white, 20);
+  }
+  z-index: 100;
+}
+
+@media only screen and (max-width: $desktop-breakpoint) {
+  .screen__container {
+    position: relative;
+    margin: 30px;
+    width: 90vw;
+    height: auto;
+    margin: 10px auto;
+  }
+  .screen__navigation {
+    P {
+      font-family: "Press Start 2P", cursive;
+      color: black;
+      margin: 0;
+      padding: 0;
+      font-size: 12px;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.footer__container {
+  background: $orange;
+  height: $footer-height;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0 $xxl-size;
+}
+.footer__text {
+  color: $white;
+  font-size: 14px;
+}
+.social__links {
+  display: flex;
+}
+.social__link {
+  margin: 0 $m-size;
+  color: $white;
+  font-size: 24px;
+}
